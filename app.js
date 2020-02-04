@@ -1,33 +1,18 @@
-const randomMovieArray = ['Star Wars', 'Harry Potter', 'Game of Thrones'];
-const randomNumber = Math.floor((Math.random() * randomMovieArray.length));
-const randomMovie = randomMovieArray[randomNumber];
+import React from "react";
 
-const url = "http://www.omdbapi.com/?i=tt3896198&apikey=6d1cdc24";
+export default class FetchRandomUser extends React.Component {
+    
+    state = {
+        loading: true
+    }
 
-const loadMovies = () => {
-    $.getJSON('http://www.omdbapi.com/?i=tt3896198&apikey=6d1cdc24&t=' + encodeURI(randomMovie)).then( response => {
-        console.log(response);
-    });
+    componentDidMount() {
+
+    }
+
+    render() {
+        return <div>
+            {this.state.loading ? <div>loading...</div> : <div> hello </div> }
+        </div>;
+    }
 }
-
-const Card = (props) => {
-    return(
-        <div className="movie-card">
-            <h3>{props.Title}</h3>
-            <p>{props.Plot}</p>
-            <p>{props.Genre}</p>
-            <p>{props.Year}</p>
-        </div>
-    );
-};
-
-const App = (props) => {
-    return(
-        <p>Hello</p>
-    );
-}
-
-ReactDOM.render(
-    <App />,
-    document.getElementById('root');
-);
