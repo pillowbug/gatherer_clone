@@ -1,0 +1,18 @@
+body {
+    background-color: #efefef;
+}
+
+#root {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 32px;
+}
+
+.movie-card {
+    width: 33%;
+    display: inline-block;
+    background-color: blue;
+    color: white;
+    padding: 32px;
+}
